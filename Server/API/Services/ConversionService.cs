@@ -115,11 +115,11 @@ namespace API.Services
 
         private void AddDollarsLabel(decimal value, StringBuilder sb)
         {
-            if (value == 1)
+            if (value >= 1 && value < 2)
             {
                 sb.Append($" {Labels.DOLLAR}");
             }
-            else if (value > 1)
+            else if (value >= 2)
             {
                 sb.Append($" {Labels.DOLLARS}");
             }

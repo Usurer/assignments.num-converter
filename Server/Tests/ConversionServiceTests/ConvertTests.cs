@@ -21,6 +21,7 @@ namespace Tests.ConversionServiceTests
         [DataRow(0.17, "seventeen cents")]
         [DataRow(0.48, "forty-eight cents")]
         [DataRow(1, "one dollar")]
+        [DataRow(1.10, "one dollar and ten cents")]
         [DataRow(2, "two dollars")]
         [DataRow(21, "twenty-one dollars")]
         [DataRow(741, "seven hundred forty-one dollars")]

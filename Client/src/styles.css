@@ -1,0 +1,10 @@
+:root {
+    --color-error: red;
+    --font-size-mid: 18px;
+    --font-size-sm: 15px;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: (var(--font-size-mid));
+}

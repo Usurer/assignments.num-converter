@@ -1,0 +1,38 @@
+<ng-container *ngIf="(state$ | async) as state">
+
+  <form [formGroup]="form" [class.disabled]="form.disabled" (ngSubmit)="onSubmit()" >
+
+    <div class="input-wrapper">
+      <input id="value-input" [formControl]="valueInput" [class.invalid]="valueInput.invalid">
+      <label for="value-input">Value to convert</label>
+    </div>
+
+    <div class="errors-container">
+      <div *ngIf="valueInput.invalid && (valueInput.dirty || valueInput.touched)">
+        <div *ngIf="valueInput.errors?.['customPattern']">
+          {{valueInput.errors?.['customPattern']}}
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="form.invalid || form.disabled">
+      Submit
+    </button>
+  </form>
+
+  <div class="results">
+    <ng-container *ngIf="state.isLoading">
+      LOADING...
+    </ng-container>
+
+    <ng-container *ngIf="state.value">
+      {{state.value}}
+    </ng-container>
+
+    <ng-container *ngIf="state.error">
+      <span>{{state.error.title}}</span>
+      <span>{{state.error.message}}</span>
+    </ng-container>
+  </div>
+
+</ng-container>

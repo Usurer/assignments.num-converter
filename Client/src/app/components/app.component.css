@@ -1,0 +1,50 @@
+:host {
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: flex-start;
+
+    :is(input, button) {
+        font-size: 1em
+    }
+
+    &.disabled {
+        opacity: 50%;
+    }
+}
+
+.input-wrapper {
+    & label {
+        padding: 0 10px;
+    }
+
+    & input {
+        border: 1px solid;
+        border-radius: 3px;
+
+        &.invalid {
+            outline-color: var(--color-error);
+            border-color: var(--color-error);
+        }
+    }
+}
+
+.errors-container {
+    min-height: 1.3em;
+    font-size: var(--font-size-sm);
+    color: var(--color-error);
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 10px;
+}

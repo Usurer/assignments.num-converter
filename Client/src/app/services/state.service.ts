@@ -1,9 +1,9 @@
-import { Injectable, OnDestroy } from "@angular/core";
+import { Injectable, OnDestroy, isDevMode } from "@angular/core";
 import { BehaviorSubject, EMPTY, Observable, Subject, catchError, take, takeUntil, tap } from "rxjs";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { toNumber } from "../utils/string-utils";
 
-const API_URL = 'http://localhost:5195/api/convertion/';
+const API_URL = isDevMode() ? 'http://localhost:5195/api/convertion/' : '/api/convertion/';
 
 export interface State {
     error?: {
